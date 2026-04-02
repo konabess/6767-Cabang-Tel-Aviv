@@ -1,120 +1,118 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPPG Tel Aviv</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPPG Tel Aviv</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-    body{background:#0b0f1a;color:#e5e7eb}
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+body{background:#0b0f1a;color:#e5e7eb}
 
-    header{
-      height:100vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      background: radial-gradient(circle at top, #1e3a8a, #020617);
-      padding:20px;
-    }
+/* HEADER */
+header{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: radial-gradient(circle at top, #1e3a8a, #020617);
+  padding:20px;
+}
 
-    .logo{width:150px;margin-bottom:20px}
+.logo{width:150px;margin-bottom:20px}
 
-    .main-title{
-      font-size:2rem;font-weight:700;
-      background:linear-gradient(90deg,#60a5fa,#22d3ee);
-      -webkit-background-clip:text;color:transparent
-    }
+.main-title{
+  font-size:2rem;font-weight:700;
+  background:linear-gradient(90deg,#60a5fa,#22d3ee);
+  -webkit-background-clip:text;color:transparent
+}
 
-    .main-title2{
-      font-size:3rem;font-weight:700;
-      background:linear-gradient(90deg,#60a5fa,#22d3ee);
-      -webkit-background-clip:text;color:transparent
-    }
+.name-title{
+  font-size:3rem;font-weight:700;
+  background:linear-gradient(90deg,#60a5fa,#22d3ee);
+  -webkit-background-clip:text;color:transparent
+}
 
-    header p{margin-top:15px;max-width:700px;opacity:.8}
+header p{margin-top:15px;max-width:700px;opacity:.8}
 
-    .section-title{
-      text-align:center;
-      font-size:1.8rem;
-      margin:40px 0 20px;
-      color:#22d3ee;
-    }
+/* SLIDER */
 
-    .banner-slider {
-      width: 90%;
-      height: 350px;
-      margin: auto;
-      overflow: hidden;
-      position: relative;
-      border-radius: 15px;
-      touch-action: pan-y;
-    }
+  .banner-title{
+    text-align: center;
+    padding-top: 30px;
+  }
 
-    .banner-track {
-      display: flex;
-      width: 700%;
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-    }
+.slider {
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  margin: 40px auto;
+}
 
-    .banner-slide {
-      flex: 0 0 100%;
-      background-size: 100% auto;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
 
-    .banner-overlay {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
-    }
+.slide {
+  min-width: 100%;
+  user-select: none;
+}
 
-    .dots {
-      position: absolute;
-      bottom: 15px;
-      width: 100%;
-      text-align: center;
-    }
+.slide img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+}
 
-    .dot {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin: 5px;
-      background: rgba(255,255,255,0.5);
-      border-radius: 50%;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+/* DOT */
+.dots {
+  text-align: center;
+  margin-top: 10px;
+}
 
-    .dot.active {
-      background: #22d3ee;
-      transform: scale(1.3);
-    }
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 5px;
+  display: inline-block;
+  background: #64748b;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    footer{
-      text-align:center;
-      padding:40px;
-      color:#64748b;
-    }
-  </style>
+.dot.active {
+  background: #22d3ee;
+}
+
+.main-p {
+  margin: 5%;
+  text-align: center;
+  opacity: .8;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:#64748b;
+}
+</style>
 </head>
+
 <body>
 
 <header>
   <img src="https://i.ibb.co.com/N2k3jxKW/1775128468927.png" class="logo">
 
   <h1 class="main-title">Satuan Pemenuhan Pelayanan Gizi</h1>
-  <p class="main-title">Cabang</p>
+  <p class="main-title">6767</p>
   <br>
-  <h1 class="main-title2">Tel Aviv</h1>
+  <h1 class="name-title">Cabang Tel Aviv</h1>
   
   <p>
     Mohon doa & restu, pembangunan SPPG 6767 Cabang Tel Aviv sedang dalam tahap
@@ -122,95 +120,108 @@
   </p>
 </header>
 
-<h2 class="section-title">Dokumentasi Pembangunan</h2>
+<main>
 
-<div class="banner-slider" id="slider">
-  <div class="banner-track" id="bannerTrack">
+<h1 class="banner-title">Dokumentasi Pembangunan</h1>
 
-    <!-- GANTI GAMBAR -->
-<div class="banner-slide" style="background-image:url('https://i.ibb.co.com/zVLZR2T0/11d610ad-40d9-469c-9f40-d438892cc444.png')"></div>
+<!-- SLIDER -->
+<div class="slider">
+  <div class="slides" id="slides">
 
-
-
-    <div class="banner-slide" style="background-image:url('img2.jpg')"></div>
-    <div class="banner-slide" style="background-image:url('img3.jpg')"></div>
-    <div class="banner-slide" style="background-image:url('img4.jpg')"></div>
-    <div class="banner-slide" style="background-image:url('img5.jpg')"></div>
-    <div class="banner-slide" style="background-image:url('img6.jpg')"></div>
-    <div class="banner-slide" style="background-image:url('img7.jpg')"></div>
-
+    <!-- GANTI GAMBAR DI SINI -->
+    <div class="slide"><img src="https://i.ibb.co.com/zVLZR2T0/11d610ad-40d9-469c-9f40-d438892cc444.png"></div>
+    <div class="slide"><img src="https://i.ibb.co.com/0jdgZRwW/1000158742-11zon.png"></div>
+    <div class="slide"><img src="https://i.ibb.co.com/rTRddmD/1000158789-11zon.png"></div>
+    <div class="slide"><img src="https://i.ibb.co.com/n8cbtgsk/1000158788-11zon.png"></div>
+    <div class="slide"><img src="https://i.ibb.co.com/F4ywPVB5/1000158790-11zon.png"></div>
+    <div class="slide"><img src="https://i.ibb.co.com/3519x6Gb/1000158794-11zon.png"></div>
   </div>
-
-  <div class="banner-overlay"></div>
-  <div class="dots" id="dots"></div>
 </div>
+<div class="dots" id="dots"></div>
 
+
+<p class="main-p">Satuan Pelayanan Pemenuhan Gizi (SPPG) Cabang Tel Aviv merupakan unit layanan Badan Gizi Nasional yang berfokus pada penyediaan makanan bergizi, aman, dan higienis bagi siswa penerima manfaat khusus wilayab Tel Aviv</p>
+
+
+</main>
+  <hr style="height: 1px; background-color: gray; border: none;">
 <footer>
-  © 2026 - SPPG 6767 Cabang Tel Aviv
+ <p> © 2026 - SPPG 6767 Cabang Tel Aviv</p>
+ <pre style="font-size: 1px;">Rekrutmen Segera
+ Persyaratan
+ Ijazah sd
+ Punya ordal
+ gaji setara pppk 
+ </pre>
 </footer>
 
 <script>
-let bannerIndex = 0;
-const bannerTrack = document.getElementById("bannerTrack");
+const slides = document.getElementById("slides");
+const totalSlides = slides.children.length;
 const dotsContainer = document.getElementById("dots");
-const totalBanner = 7;
 
-/* DOT */
-for(let i=0;i<totalBanner;i++){
-  const dot = document.createElement("span");
+let index = 0;
+let startX = 0;
+let isDragging = false;
+
+// BUAT DOT
+for (let i = 0; i < totalSlides; i++) {
+  let dot = document.createElement("span");
   dot.classList.add("dot");
-  if(i===0) dot.classList.add("active");
+  if (i === 0) dot.classList.add("active");
 
-  dot.onclick = () => {
-    bannerIndex = i;
-    updateSlider();
-  };
+  dot.addEventListener("click", () => {
+    index = i;
+    updateSlide();
+  });
 
   dotsContainer.appendChild(dot);
 }
 
 const dots = document.querySelectorAll(".dot");
 
-function updateSlider(){
-  bannerTrack.style.transform = `translateX(-${bannerIndex * 100}%)`;
-  dots.forEach(d=>d.classList.remove("active"));
-  dots[bannerIndex].classList.add("active");
+// UPDATE SLIDE
+function updateSlide() {
+  slides.style.transform = `translateX(-${index * 100}%)`;
+
+  dots.forEach(dot => dot.classList.remove("active"));
+  dots[index].classList.add("active");
 }
 
-/* AUTO */
-setInterval(()=>{
-  bannerIndex = (bannerIndex+1)%totalBanner;
-  updateSlider();
-},5000);
+// AUTO SLIDE 5 DETIK
+setInterval(() => {
+  index = (index + 1) % totalSlides;
+  updateSlide();
+}, 5000);
 
-/* ===== SWIPE SUPPORT ===== */
-let startX = 0;
-let endX = 0;
+// DRAG & SWIPE
+slides.addEventListener("mousedown", startDrag);
+slides.addEventListener("touchstart", startDrag);
 
-const slider = document.getElementById("slider");
+slides.addEventListener("mouseup", endDrag);
+slides.addEventListener("mouseleave", endDrag);
+slides.addEventListener("touchend", endDrag);
 
-slider.addEventListener("touchstart", e => {
-  startX = e.touches[0].clientX;
-});
+function startDrag(e) {
+  isDragging = true;
+  startX = e.type.includes("mouse") ? e.pageX : e.touches[0].clientX;
+}
 
-slider.addEventListener("touchmove", e => {
-  endX = e.touches[0].clientX;
-});
+function endDrag(e) {
+  if (!isDragging) return;
 
-slider.addEventListener("touchend", () => {
+  let endX = e.type.includes("mouse") ? e.pageX : e.changedTouches[0].clientX;
   let diff = startX - endX;
 
-  if(Math.abs(diff) > 50){
-    if(diff > 0){
-      // swipe kiri
-      bannerIndex = (bannerIndex + 1) % totalBanner;
-    } else {
-      // swipe kanan
-      bannerIndex = (bannerIndex - 1 + totalBanner) % totalBanner;
-    }
-    updateSlider();
+  if (diff > 50) {
+    index = (index + 1) % totalSlides;
+  } else if (diff < -50) {
+    index = (index - 1 + totalSlides) % totalSlides;
   }
-});
+
+  updateSlide();
+  isDragging = false;
+}
 </script>
 
 </body>
