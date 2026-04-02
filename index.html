@@ -4,24 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SPPG Tel Aviv</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
     *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-
     body{background:#0b0f1a;color:#e5e7eb}
 
-    nav{
-      position:fixed;top:0;width:100%;display:flex;justify-content:center;gap:40px;
-      padding:20px;background:rgba(2,6,23,.6);backdrop-filter:blur(12px);z-index:999
-    }
-
-    nav a{color:#cbd5f5;text-decoration:none;font-size:1rem;transition:.3s}
-    nav a:hover{color:#60a5fa}
-
     header{
-      height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
-      text-align:center;background: radial-gradient(circle at top, #1e3a8a, #020617);
-      position:relative;overflow:hidden;padding:0 20px
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      background: radial-gradient(circle at top, #1e3a8a, #020617);
+      padding:20px;
     }
 
     .logo{width:150px;margin-bottom:20px}
@@ -31,129 +29,187 @@
       background:linear-gradient(90deg,#60a5fa,#22d3ee);
       -webkit-background-clip:text;color:transparent
     }
-    
+
     .main-title2{
       font-size:3rem;font-weight:700;
       background:linear-gradient(90deg,#60a5fa,#22d3ee);
       -webkit-background-clip:text;color:transparent
     }
 
-    header p{margin-top:15px;opacity:.7;max-width:700px;font-size:1.1rem}
+    header p{margin-top:15px;max-width:700px;opacity:.8}
 
-    section{padding:120px 40px;max-width:1200px;margin:auto}
-
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-      gap:30px
+    .section-title{
+      text-align:center;
+      font-size:1.8rem;
+      margin:40px 0 20px;
+      color:#22d3ee;
     }
 
-    .card{
-      background:#020617;border:1px solid rgba(255,255,255,0.05);
-      padding:30px;border-radius:20px;transition:.4s;
-      transform:translateY(40px);opacity:0;font-size:1rem;line-height:1.6
+    .banner-slider {
+      width: 90%;
+      height: 350px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      border-radius: 15px;
+      touch-action: pan-y;
     }
 
-    .card.show{transform:translateY(0);opacity:1}
-
-    .card:hover{
-      transform:translateY(-12px) scale(1.02);
-      border:1px solid #3b82f6;
-      box-shadow:0 25px 60px rgba(59,130,246,.25)
+    .banner-track {
+      display: flex;
+      width: 700%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
     }
 
-    h2{margin-bottom:20px;font-size:2rem;color:#60a5fa}
-
-    footer{text-align:center;padding:40px;color:#64748b;font-size:.9rem}
-
-    /* DESKTOP ENHANCEMENT */
-    @media(min-width:1024px){
-      header h1{font-size:4.5rem}
-      header p{font-size:1.2rem}
-
-      section{padding:140px 60px}
-
-      .grid{
-        grid-template-columns:repeat(2,1fr);
-      }
-
-      #layanan .grid{
-        grid-template-columns:repeat(4,1fr);
-      }
-
-      #kontak .grid{
-        grid-template-columns:repeat(3,1fr);
-      }
+    .banner-slide {
+      flex: 0 0 100%;
+      background-size: 100% auto;
+      background-position: center;
+      background-repeat: no-repeat;
     }
 
-    @media(min-width:1400px){
-      section{max-width:1300px}
+    .banner-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.4), transparent);
     }
-    .note {
-    font-size: 1px;
+
+    .dots {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 5px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .dot.active {
+      background: #22d3ee;
+      transform: scale(1.3);
+    }
+
+    footer{
+      text-align:center;
+      padding:40px;
+      color:#64748b;
     }
   </style>
 </head>
 <body>
 
-<!-- <nav>
-  <a href="#">Home</a>
-  <a href="#tentang">Tentang</a>
-  <a href="#layanan">Layanan</a>
-  <a href="#kontak">Kontak</a>
-</nav> -->
-
 <header>
   <img src="https://i.ibb.co.com/N2k3jxKW/1775128468927.png" class="logo">
-  <h1 class="main-title">Satuan Pemenuhan Pelayanan Gizi </h1>
+
+  <h1 class="main-title">Satuan Pemenuhan Pelayanan Gizi</h1>
   <p class="main-title">Cabang</p>
   <br>
-  <h1 class="main-title2"> Tel Aviv </h1>
-  <p>Mohon doa & restu, pembangunan SPPG 6767 Cabang Tel Aviv sedang dalam tahap pengembangan dan pembangunan untuk informasi selanjutnya terkait SPPG kami akan di posting melalui laman ini</p>
+  <h1 class="main-title2">Tel Aviv</h1>
+  
+  <p>
+    Mohon doa & restu, pembangunan SPPG 6767 Cabang Tel Aviv sedang dalam tahap
+    pengembangan dan pembangunan.
+  </p>
 </header>
 
-<!-- <section id="tentang">
-  <h2>Tentang</h2>
-  <div class="grid">
-    <div class="card">SPPG (Satuan Pemenuhan Pelayanan Gizi) Cabang Tel Aviv merupakan unit pelayanan yang berfokus pada pemenuhan kebutuhan gizi masyarakat secara optimal.</div>
-    <div class="card">Kami berkomitmen meningkatkan kualitas kesehatan melalui pelayanan gizi yang cepat, tepat, dan berbasis data.</div>
-  </div>
-</section>
+<h2 class="section-title">Dokumentasi Pembangunan</h2>
 
-<section id="layanan">
-  <h2>Layanan</h2>
-  <div class="grid">
-    <div class="card">Konsultasi Gizi Masyarakat</div>
-    <div class="card">Pemantauan Status Gizi</div>
-    <div class="card">Distribusi Program Gizi</div>
-    <div class="card">Edukasi Pola Makan Sehat</div>
-  </div>
-</section>
+<div class="banner-slider" id="slider">
+  <div class="banner-track" id="bannerTrack">
 
-<section id="kontak">
-  <h2>Kontak</h2>
-  <div class="grid">
-    <div class="card">Email: sppg.telaviv@gizi.go.id</div>
-    <div class="card">Telp: +972-000</div>
-    <div class="card">Alamat: Tel Aviv</div>
+    <!-- GANTI GAMBAR -->
+<div class="banner-slide" style="background-image:url('https://i.ibb.co.com/zVLZR2T0/11d610ad-40d9-469c-9f40-d438892cc444.png')"></div>
+
+
+
+    <div class="banner-slide" style="background-image:url('img2.jpg')"></div>
+    <div class="banner-slide" style="background-image:url('img3.jpg')"></div>
+    <div class="banner-slide" style="background-image:url('img4.jpg')"></div>
+    <div class="banner-slide" style="background-image:url('img5.jpg')"></div>
+    <div class="banner-slide" style="background-image:url('img6.jpg')"></div>
+    <div class="banner-slide" style="background-image:url('img7.jpg')"></div>
+
   </div>
-</section> -->
+
+  <div class="banner-overlay"></div>
+  <div class="dots" id="dots"></div>
+</div>
 
 <footer>
-  <p>© 2026 - Satuan Pemenuhan Pelayanan Gizi 6767 Cabang Tel Aviv </p>
-  
-  <p class="note"> Note : Rekrutmen akan dibuka gaji = pppk </p>
+  © 2026 - SPPG 6767 Cabang Tel Aviv
 </footer>
 
 <script>
-const cards=document.querySelectorAll('.card');
-window.addEventListener('scroll',()=>{
-  const trigger=window.innerHeight*0.85;
-  cards.forEach(card=>{
-    if(card.getBoundingClientRect().top<trigger){
-      card.classList.add('show');
+let bannerIndex = 0;
+const bannerTrack = document.getElementById("bannerTrack");
+const dotsContainer = document.getElementById("dots");
+const totalBanner = 7;
+
+/* DOT */
+for(let i=0;i<totalBanner;i++){
+  const dot = document.createElement("span");
+  dot.classList.add("dot");
+  if(i===0) dot.classList.add("active");
+
+  dot.onclick = () => {
+    bannerIndex = i;
+    updateSlider();
+  };
+
+  dotsContainer.appendChild(dot);
+}
+
+const dots = document.querySelectorAll(".dot");
+
+function updateSlider(){
+  bannerTrack.style.transform = `translateX(-${bannerIndex * 100}%)`;
+  dots.forEach(d=>d.classList.remove("active"));
+  dots[bannerIndex].classList.add("active");
+}
+
+/* AUTO */
+setInterval(()=>{
+  bannerIndex = (bannerIndex+1)%totalBanner;
+  updateSlider();
+},5000);
+
+/* ===== SWIPE SUPPORT ===== */
+let startX = 0;
+let endX = 0;
+
+const slider = document.getElementById("slider");
+
+slider.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchmove", e => {
+  endX = e.touches[0].clientX;
+});
+
+slider.addEventListener("touchend", () => {
+  let diff = startX - endX;
+
+  if(Math.abs(diff) > 50){
+    if(diff > 0){
+      // swipe kiri
+      bannerIndex = (bannerIndex + 1) % totalBanner;
+    } else {
+      // swipe kanan
+      bannerIndex = (bannerIndex - 1 + totalBanner) % totalBanner;
     }
-  });
+    updateSlider();
+  }
 });
 </script>
 
