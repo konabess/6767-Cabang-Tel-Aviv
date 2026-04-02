@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPPG Tel Aviv</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+    body{background:#0b0f1a;color:#e5e7eb}
+
+    nav{
+      position:fixed;top:0;width:100%;display:flex;justify-content:center;gap:40px;
+      padding:20px;background:rgba(2,6,23,.6);backdrop-filter:blur(12px);z-index:999
+    }
+
+    nav a{color:#cbd5f5;text-decoration:none;font-size:1rem;transition:.3s}
+    nav a:hover{color:#60a5fa}
+
+    header{
+      height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+      text-align:center;background: radial-gradient(circle at top, #1e3a8a, #020617);
+      position:relative;overflow:hidden;padding:0 20px
+    }
+
+    .logo{width:150px;margin-bottom:20px}
+
+    .main-title{
+      font-size:2rem;font-weight:700;
+      background:linear-gradient(90deg,#60a5fa,#22d3ee);
+      -webkit-background-clip:text;color:transparent
+    }
+    
+    .main-title2{
+      font-size:3rem;font-weight:700;
+      background:linear-gradient(90deg,#60a5fa,#22d3ee);
+      -webkit-background-clip:text;color:transparent
+    }
+
+    header p{margin-top:15px;opacity:.7;max-width:700px;font-size:1.1rem}
+
+    section{padding:120px 40px;max-width:1200px;margin:auto}
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px
+    }
+
+    .card{
+      background:#020617;border:1px solid rgba(255,255,255,0.05);
+      padding:30px;border-radius:20px;transition:.4s;
+      transform:translateY(40px);opacity:0;font-size:1rem;line-height:1.6
+    }
+
+    .card.show{transform:translateY(0);opacity:1}
+
+    .card:hover{
+      transform:translateY(-12px) scale(1.02);
+      border:1px solid #3b82f6;
+      box-shadow:0 25px 60px rgba(59,130,246,.25)
+    }
+
+    h2{margin-bottom:20px;font-size:2rem;color:#60a5fa}
+
+    footer{text-align:center;padding:40px;color:#64748b;font-size:.9rem}
+
+    /* DESKTOP ENHANCEMENT */
+    @media(min-width:1024px){
+      header h1{font-size:4.5rem}
+      header p{font-size:1.2rem}
+
+      section{padding:140px 60px}
+
+      .grid{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+      #layanan .grid{
+        grid-template-columns:repeat(4,1fr);
+      }
+
+      #kontak .grid{
+        grid-template-columns:repeat(3,1fr);
+      }
+    }
+
+    @media(min-width:1400px){
+      section{max-width:1300px}
+    }
+    .note {
+    font-size: 1px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- <nav>
+  <a href="#">Home</a>
+  <a href="#tentang">Tentang</a>
+  <a href="#layanan">Layanan</a>
+  <a href="#kontak">Kontak</a>
+</nav> -->
+
+<header>
+  <img src="https://i.ibb.co.com/N2k3jxKW/1775128468927.png" class="logo">
+  <h1 class="main-title">Satuan Pemenuhan Pelayanan Gizi </h1>
+  <p class="main-title">Cabang</p>
+  <br>
+  <h1 class="main-title2"> Tel Aviv </h1>
+  <p>Mohon doa & restu, pembangunan SPPG 6767 Cabang Tel Aviv sedang dalam tahap pengembangan dan pembangunan untuk informasi selanjutnya terkait SPPG kami akan di posting melalui laman ini</p>
+</header>
+
+<!-- <section id="tentang">
+  <h2>Tentang</h2>
+  <div class="grid">
+    <div class="card">SPPG (Satuan Pemenuhan Pelayanan Gizi) Cabang Tel Aviv merupakan unit pelayanan yang berfokus pada pemenuhan kebutuhan gizi masyarakat secara optimal.</div>
+    <div class="card">Kami berkomitmen meningkatkan kualitas kesehatan melalui pelayanan gizi yang cepat, tepat, dan berbasis data.</div>
+  </div>
+</section>
+
+<section id="layanan">
+  <h2>Layanan</h2>
+  <div class="grid">
+    <div class="card">Konsultasi Gizi Masyarakat</div>
+    <div class="card">Pemantauan Status Gizi</div>
+    <div class="card">Distribusi Program Gizi</div>
+    <div class="card">Edukasi Pola Makan Sehat</div>
+  </div>
+</section>
+
+<section id="kontak">
+  <h2>Kontak</h2>
+  <div class="grid">
+    <div class="card">Email: sppg.telaviv@gizi.go.id</div>
+    <div class="card">Telp: +972-000</div>
+    <div class="card">Alamat: Tel Aviv</div>
+  </div>
+</section> -->
+
+<footer>
+  <p>© 2026 - Satuan Pemenuhan Pelayanan Gizi 6767 Cabang Tel Aviv </p>
+  
+  <p class="note"> Note : Rekrutmen akan dibuka gaji = pppk </p>
+</footer>
+
+<script>
+const cards=document.querySelectorAll('.card');
+window.addEventListener('scroll',()=>{
+  const trigger=window.innerHeight*0.85;
+  cards.forEach(card=>{
+    if(card.getBoundingClientRect().top<trigger){
+      card.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
